@@ -34,6 +34,7 @@ use PhpParser\Node\Param;
 use PhpParser\Node\UnionType;
 use PHPStan\BetterReflection\BetterReflection;
 use PHPStan\BetterReflection\Util\Exception\NoNodePosition;
+use PHPStan\Reflection\ExtendedMethodReflection;
 use PHPStan\Reflection\Php\BuiltinMethodReflection;
 use PHPStan\TrinaryLogic;
 use PHPStan\BetterReflection\Reflection\Adapter\ReflectionClass;
@@ -70,7 +71,7 @@ use function array_map;
  * @license     http://teknoo.software/license/mit         MIT License
  * @author      Richard Déloge <richard@teknoo.software>
  */
-class StateMethod implements BuiltinMethodReflection
+class StateMethod implements ExtendedMethodReflection
 {
     public function __construct(
         private readonly ReflectionMethod|NativeReflectionMethod $factoryReflection,
